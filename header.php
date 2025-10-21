@@ -23,11 +23,6 @@
   </div>
 </header>
 <style>
-
-    .logo {
-        position: absolute;
-        left: 20px;
-        }
         
     header {
             background: linear-gradient(135deg, #2a4055);
@@ -110,4 +105,5 @@
     <?php endif; ?>
 
    <script src="script.js"></script>
+
 
