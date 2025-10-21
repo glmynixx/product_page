@@ -5,8 +5,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-require_once 'config.php'; // if config.php also starts session that's fine
-include 'products.php';   // loads $products and $section_descriptions
+require_once 'config.php';
+include 'products.php';  
 
 $category = isset($_GET['category']) ? htmlspecialchars($_GET['category']) : null;
 $title = 'Aimazon - ' . ucfirst($category ?? 'Home');
@@ -143,3 +143,4 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 </main>
 
 <?php include 'footer.php'; ?>
+
