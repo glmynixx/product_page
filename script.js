@@ -6,22 +6,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const frontSection = document.querySelector('.front');
   const currentCategory = new URLSearchParams(window.location.search).get('category') || null;
 
-  // ✅ Function to show section
+  // function to show section
   window.showSection = function (category) {
     if (isNavigating) return; // Prevent recursion
     isNavigating = true;
 
-    // Hide front section for categories
+    // hide front section for categories
     if (frontSection) frontSection.style.display = 'none';
 
-    // Hide all sections
+    // hide all sections
     sections.forEach(section => section.style.display = 'none');
 
-    // Show target section
+    // show target section
     const targetSection = document.getElementById(category);
     if (targetSection) targetSection.style.display = 'block';
 
-    // Update active nav
+    // update active nav
     navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.dataset.page === category) {
@@ -29,20 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Update URL if different
+    // update URL if different
     const currentUrl = new URL(window.location);
     if (currentUrl.searchParams.get('category') !== category) {
       currentUrl.searchParams.set('category', category);
       window.history.pushState({}, '', currentUrl);
     }
 
-    // Reset flag
+    // reset flag
     setTimeout(() => {
       isNavigating = false;
     }, 100);
   };
 
-  // ✅ Initial load
+  // initial load
   if (currentCategory && currentCategory !== 'home') {
     if (frontSection) frontSection.style.display = 'none';
     showSection(currentCategory);
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sections.forEach(section => section.style.display = 'none');
   }
 
-  // ✅ Intercept nav clicks
+  // intercept nav clicks
   navLinks.forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ✅ Handle browser back/forward
+  // handle browser back/forward
   window.addEventListener('popstate', function () {
     if (isNavigating) return;
 
@@ -76,3 +76,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
