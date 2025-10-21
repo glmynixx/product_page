@@ -42,11 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Debug: print cart session in HTML comment to inspect without breaking layout
-echo "<!-- DEBUG: SESSION CART: ";
-echo htmlspecialchars(json_encode($_SESSION['cart'] ?? 'EMPTY'));
-echo " -->";
-
 // product lookup keyed by id 
 $product_lookup = [];
 foreach ($products as $cat_products) {
@@ -237,3 +232,4 @@ foreach ($cart_items as $it) {
 </main>
 
 <?php include 'footer.php'; ?>
+
