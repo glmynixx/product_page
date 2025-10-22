@@ -105,11 +105,11 @@ foreach ($cart_items as $it) {
                 <nav>
                     <ul>
                         <li><a href="cart.php" class="nav-link">🛒 (<?php echo isset($cart_count) ? $cart_count : 0; ?>)</a></li>
-                        <li><a href="#" class="nav-link">👤</a></li>
                             <div class="dropdown">
                             <button class="dropbtn">☰</button>
                             <div class="dropdown-content">
                                 <a href="#">Home</a>
+                                <a href="#">Profile</a>
                                 <a href="#">About Us</a>
                                 <a href="#">Contact</a>
                                 <a href="#">Logout</a>
@@ -232,4 +232,5 @@ foreach ($cart_items as $it) {
 </main>
 
 <?php include 'footer.php'; ?>
+
 
