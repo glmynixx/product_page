@@ -6,12 +6,12 @@
             <ul>
                 
                 <a href="cart.php" class="nav-link">🛒 (<?php echo isset($cart_count) ? $cart_count : 0; ?>)</a>
-                <a href="#" class="nav-link">👤</a>
 
             <div class="dropdown">
                 <button class="dropbtn">☰</button>
                     <div class="dropdown-content">
                         <a href="#">Home</a>
+                        <a href="#">Profile</a>
                         <a href="#">About Us</a>
                         <a href="#">Contact</a>
                         <a href="#">Logout</a>
@@ -105,5 +105,6 @@
     <?php endif; ?>
 
    <script src="script.js"></script>
+
 
 
